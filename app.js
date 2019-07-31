@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 const app = express();
 
 // Connect to Mongoose
@@ -16,6 +17,16 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
+// BodyParser MiddlwWare
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+app.use(bodyParser.json());
+
+// Index Route
+app.get('/', (req, res) => {
+    res.render('index');
+})
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is listening to port: ${port}`);
