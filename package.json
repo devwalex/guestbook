@@ -10,10 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/devwalex/guestbook.git"
   },
-  "author": "Salami Usman Olawalex",
+  "author": "Salami Usman Olawale",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/devwalex/guestbook/issues"
   },
-  "homepage": "https://github.com/devwalex/guestbook#readme"
+  "homepage": "https://github.com/devwalex/guestbook#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.6.6"
+  }
 }
