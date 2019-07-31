@@ -1,8 +1,8 @@
-<h2>Join Our GuestBook</h2>
-<form class="ui form" action="/all-guest" method="POST">
+<h2>Edit Guest Entry</h2>
+<form class="ui form" action="/all-guest" method="PUT">
   <div class="field">
-    <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name" required>
+    <label>Full Name</label>
+    <input type="text" name="name" placeholder="First Name" required>
   </div>
   <div class="field">
     <label>Email</label>
@@ -18,5 +18,6 @@
       <label>I agree to the Terms and Conditions</label>
     </div>
   </div>
-  <button class="ui primary button" type="submit">Submit</button>
+  <button class="ui primary button" type="submit">Save</button>
+    <a class="ui red button" href="/all-guest">Cancel</a>
 </form>
