@@ -104,8 +104,18 @@ app.get('/edit', (req, res) => {
 
 // All Guest Route -- View
 app.get('/all-guest', (req, res) => {
-    res.render('all-guest');
+    Guest.find()
+        .sort({
+            date: 'desc'
+        })
+        .then((guest) => {
+            res.render('all-guest', {
+                guest
+            });
+        })
 });
+
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

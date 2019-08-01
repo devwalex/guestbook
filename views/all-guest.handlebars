@@ -1,13 +1,14 @@
 <h1>View All Guests</h1>
+{{#each guest}}
   <div class="ui divided items">
     <div class="item">
         <div class="content">
-            <a class="header">Salami Usman Olawale</a>
+            <a class="header">{{fullname}}</a>
             <div class="meta">
-              <span class="cinema">salamiusmanolawale@gmail.com</span>
+              <span class="cinema">{{email}}</span>
             </div>
             <div class="description">
-              <p>A Full Stack Developer. Co-host @mintpodcast. Knowledge Seeker. Cavs 🏀. Marvel #MCU. Ace ♠ Developer.</p>
+              <p>{{comment}}</p>
             </div>
             <div class="extra">
               <a href="edit.html">
@@ -20,6 +21,9 @@
         </div>
     </div>
   </div>
+  {{else}}
+<p>No Guest Found</p>
+{{/each}}
   		<div class="ui small modal">
 		    <div class="header">
 		      Delete This Entry
