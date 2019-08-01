@@ -55,26 +55,26 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-// Index Routr -- Post
+// Index Router -- Post
 app.post('/', (req, res) => {
     let errors = [];
-    if (!req.body.fullname) {
+    if (!req.body.fullname || typeof (req.body.fullname.trim()) !== 'undefined') {
         errors.push({
             text: 'Please enter your name'
         });
     }
-    if (!req.body.email) {
+    if (!req.body.email || typeof (req.body.fullname.trim()) !== 'undefined') {
         errors.push({
             text: 'Please enter your email'
         });
     }
-    if (!req.body.comment) {
+    if (!req.body.comment || typeof (req.body.fullname.trim()) !== 'undefined') {
         errors.push({
             text: 'Please enter a comment'
         })
     }
     if (errors.length > 0) {
-        res.render('/', {
+        res.render('index', {
             errors: errors,
             fullname: req.body.fullname,
             email: req.body.email,
