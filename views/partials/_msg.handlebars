@@ -1,18 +1,19 @@
-{{#if error}}
+{{#if error_msg}}
   <div class="ui visible negative message">
     <i class="close icon"></i>
     <div class="header">
-      We're sorry we can't record your entry
+      {{!-- We're sorry we can't record your entry --}}
     </div>
-    <p>An error occured</p>
+    <p>{{error_msg}}</p>
   </div>
-{{else}}
+{{/if}}
+{{#if success_msg}}
   <div class="ui visible success message">
       <i class="close icon"></i>
       <div class="header">
-        Your entry was successful.
+        {{!-- Your entry was successful. --}}
       </div>
-      <p>You are now a valid member of our guestbook.</p>
+      <p>{{success_msg}}</p>
   </div>
 {{/if}}
 

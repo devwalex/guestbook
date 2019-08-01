@@ -1,20 +1,20 @@
 <h1>Join Our GuestBook</h1>
-<form class="ui form left aligned six column segment" action="" method="post" name="form" id="form">
+<form class="ui form left aligned six column segment" action="/" method="post" name="form" id="form">
 	<div class="field">
 		<label>Full Name</label>
-		<input type="text" id="fullname" name="fullname" placeholder="Full Name">
+		<input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
 	</div>
 	<div class="field">
 		<label>Email</label>
-		<input type="email" id="email" name="email" placeholder="Email Address">
+		<input type="email" id="email" name="email" placeholder="Email Address" required>
 	</div>
 	<div class="field">
 		<label>Comment</label>
-		<textarea name="comment" id="comment"></textarea>
+		<textarea name="comment" id="comment" required></textarea>
 	</div>
 	<div class="field">
 		<div class="ui checkbox">
-			<input type="checkbox" name="agree" id="agree" tabindex="0" class="hidden">
+			<input type="checkbox" name="agree" id="agree" tabindex="0" class="hidden" required>
 			<label for="agree">I agree to the Terms and Conditions</label>
 		</div>
 	</div>
