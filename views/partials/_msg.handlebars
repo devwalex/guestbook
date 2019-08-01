@@ -1,15 +1,19 @@
 {{#if error}}
-<div class="ui error message">
-  <i class="close icon"></i>
-  <div class="header">
-    Your user registration was unsuccessful.
+  <div class="ui visible negative message">
+    <i class="close icon"></i>
+    <div class="header">
+      We're sorry we can't record your entry
+    </div>
+    <p>An error occured</p>
   </div>
-</div>
 {{else}}
-<div class="ui success message">
-  <i class="close icon"></i>
-  <div class="header">
-    Your user registration was successful.
+  <div class="ui visible success message">
+      <i class="close icon"></i>
+      <div class="header">
+        Your entry was successful.
+      </div>
+      <p>You are now a valid member of our guestbook.</p>
   </div>
-</div>
 {{/if}}
+
+			    		

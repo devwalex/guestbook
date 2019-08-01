@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Create Guest Schema
 const GuestSchema = new Schema({
-    name: {
+    fullname: {
         type: String,
         required: true
     },

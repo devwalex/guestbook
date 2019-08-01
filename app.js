@@ -17,6 +17,8 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
+app.use(express.static('public'))
+
 // BodyParser MiddlwWare
 app.use(bodyParser.urlencoded({
     extended: false
@@ -27,10 +29,15 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.render('index');
 })
-
+// Edit Route -- View
 app.get('/edit', (req, res) => {
-    res.render('edit')
-})
+    res.render('edit');
+});
+
+// All Guest Route
+app.get('/all-guest', (req, res) => {
+    res.render('all-guest');
+});
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is listening to port: ${port}`);

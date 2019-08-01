@@ -1,22 +1,22 @@
-<h2>Join Our GuestBook</h2>
-<form class="ui form" action="/all-guest" method="POST">
-  <div class="field">
-    <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name" required>
-  </div>
-  <div class="field">
-    <label>Email</label>
-    <input type="text" name="email" placeholder="Email" required>
-  </div>
-  <div class="field">
-    <label>Comment</label>
-    <textarea></textarea>
-  </div>
-  <div class="field">
-    <div class="ui checkbox">
-      <input type="checkbox" tabindex="0" class="hidden" required>
-      <label>I agree to the Terms and Conditions</label>
-    </div>
-  </div>
-  <button class="ui primary button" type="submit">Submit</button>
+<h1>Join Our GuestBook</h1>
+<form class="ui form left aligned six column segment" action="" method="post" name="form" id="form">
+	<div class="field">
+		<label>Full Name</label>
+		<input type="text" id="fullname" name="fullname" placeholder="Full Name">
+	</div>
+	<div class="field">
+		<label>Email</label>
+		<input type="email" id="email" name="email" placeholder="Email Address">
+	</div>
+	<div class="field">
+		<label>Comment</label>
+		<textarea name="comment" id="comment"></textarea>
+	</div>
+	<div class="field">
+		<div class="ui checkbox">
+			<input type="checkbox" name="agree" id="agree" tabindex="0" class="hidden">
+			<label for="agree">I agree to the Terms and Conditions</label>
+		</div>
+	</div>
+	<button class="ui submit button" type="submit">Submit</button>
 </form>

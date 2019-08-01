@@ -1,23 +1,30 @@
-<h2>Edit Guest Entry</h2>
-<form class="ui form" action="/all-guest" method="PUT">
-  <div class="field">
-    <label>Full Name</label>
-    <input type="text" name="name" placeholder="First Name" required>
-  </div>
-  <div class="field">
-    <label>Email</label>
-    <input type="text" name="email" placeholder="Email" required>
-  </div>
-  <div class="field">
-    <label>Comment</label>
-    <textarea></textarea>
-  </div>
-  <div class="field">
-    <div class="ui checkbox">
-      <input type="checkbox" tabindex="0" class="hidden" required>
-      <label>I agree to the Terms and Conditions</label>
+<h1>Edit Guest Entry</h1>
+<form class="ui form left aligned six column segment" action="" method="post" name="form" id="form">
+	  <div class="ui visible negative message">
+    <i class="close icon"></i>
+    <div class="header">
+      We're sorry we can't record your entry
     </div>
+    <p>An error occured</p>
   </div>
-  <button class="ui primary button" type="submit">Save</button>
-    <a class="ui red button" href="/all-guest">Cancel</a>
+	<div class="field">
+		<label>Full Name</label>
+		<input type="text" id="fullname" name="fullname" placeholder="Full Name">
+	</div>
+	<div class="field">
+		<label>Email</label>
+		<input type="email" id="email" name="email" placeholder="Email Address">
+	</div>
+	<div class="field">
+		<label>Comment</label>
+		<textarea name="comment" id="comment"></textarea>
+	</div>
+	<div class="field">
+		<div class="ui checkbox">
+			<input type="checkbox" name="agree" id="agree" tabindex="0" class="hidden">
+			<label for="agree">I agree to the Terms and Conditions</label>
+		</div>
+	</div>
+	<button class="ui submit button" type="submit">Submit</button>
+	<a href="/all-guest" class="ui red button" >Cancel</a>
 </form>
