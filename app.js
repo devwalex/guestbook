@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -48,6 +49,9 @@ app.use(
 // Flash Middleware
 app.use(flash());
 
+// MethodOverride Middleware
+app.use(methodOverride('_method'));
+
 // Load Guest Model
 require('./models/Guest');
 const Guest = mongoose.model('guest');
@@ -65,7 +69,7 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
-// Index Router -- Post
+// Index Route -- Post
 app.post('/', (req, res) => {
 	let errors = [];
 	if (!req.body.fullname || req.body.fullname.trim().length === 0) {
@@ -105,8 +109,30 @@ app.post('/', (req, res) => {
 });
 
 // Edit Route -- View
-app.get('/edit', (req, res) => {
-	res.render('edit');
+app.get('/edit/:id', (req, res) => {
+	Guest.findOne({
+		_id: req.params.id
+	}).then((guest) => {
+		res.render('edit', {
+			guest
+		});
+	})
+});
+// Edit Route -- PUT
+app.put('/edit/:id', (req, res) => {
+	Guest.findOne({
+		_id: req.params.id
+	}).then((guest) => {
+		guest.fullname = req.body.fullname;
+		guest.email = req.body.email;
+		guest.comment = req.body.email;
+
+		guest.save().then((idea) => {
+			console.log('Updated Successfully', idea);
+			req.flash('success_msg', 'Guest Updated Successfully');
+			res.redirect('/all-guest');
+		});
+	});
 });
 
 // All Guest Route -- View
