@@ -148,6 +148,16 @@ app.get('/all-guest', (req, res) => {
 		});
 });
 
+// Delete Route -- DELETE
+app.delete('/guest/:id', (req, res) => {
+	Guest.deleteOne({
+		_id: req.params.id
+	}).then((guest) => {
+		console.log('Deleted Succeesfully', guest);
+		req.flash('success_msg', 'Guest Entry Deleted Successfully');
+		res.redirect('/all-guest');
+	})
+})
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
 	console.log(`Server is listening to port: ${port}`);
