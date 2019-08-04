@@ -120,19 +120,45 @@ app.get('/edit/:id', (req, res) => {
 });
 // Edit Route -- PUT
 app.put('/edit/:id', (req, res) => {
-	Guest.findOne({
-		_id: req.params.id
-	}).then((guest) => {
-		guest.fullname = req.body.fullname;
-		guest.email = req.body.email;
-		guest.comment = req.body.comment;
-
-		guest.save().then((idea) => {
-			console.log('Updated Successfully', idea);
-			req.flash('success_msg', 'Guest Updated Successfully');
-			res.redirect('/all-guest');
+	let errors = [];
+	if (!req.body.fullname || req.body.fullname.trim().length === 0) {
+		errors.push({
+			text: 'Please enter your name'
 		});
-	});
+	}
+	if (!req.body.email || req.body.email.trim().length === 0) {
+		errors.push({
+			text: 'Please enter your email'
+		});
+	}
+	if (!req.body.comment || req.body.comment.trim().length === 0) {
+		errors.push({
+			text: 'Please enter a comment'
+		});
+	}
+	if (errors.length > 0) {
+		res.render('edit', {
+			errors: errors,
+			fullname: req.body.fullname,
+			email: req.body.email,
+			comment: req.body.comment
+		});
+	} else {
+		Guest.findOne({
+			_id: req.params.id
+		}).then((guest) => {
+			guest.fullname = req.body.fullname;
+			guest.email = req.body.email;
+			guest.comment = req.body.comment;
+
+			guest.save().then((idea) => {
+				console.log('Updated Successfully', idea);
+				req.flash('success_msg', 'Guest Updated Successfully');
+				res.redirect('/all-guest');
+			});
+		});
+	}
+
 });
 
 // All Guest Route -- View
