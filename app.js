@@ -125,7 +125,7 @@ app.put('/edit/:id', (req, res) => {
 	}).then((guest) => {
 		guest.fullname = req.body.fullname;
 		guest.email = req.body.email;
-		guest.comment = req.body.email;
+		guest.comment = req.body.comment;
 
 		guest.save().then((idea) => {
 			console.log('Updated Successfully', idea);

@@ -6,13 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guest Book</title>
   		<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
+          <style>
+              *{
+                  font-family: 'Raleway';
+              }
+              .ui.inverted.segment{
+                  margin-top: 60px;
+              }
+              .ui[class*="left aligned"].segment {
+                  margin-bottom: 25px;
+              }
+              h1:first-child{
+                  margin-top: 50px;
+              }
+          </style>
 </head>
 <body>
 {{> _navbar}}
-<div class="ui text container">
-{{> _msg}}
-{{> _errors}}
-{{{body}}}
+    <div class="ui text container">
+        {{> _msg}}
+        {{> _errors}}
+        {{{body}}}
+    </div>
+<div class="ui inverted vertical footer segment">
+  <div class="ui center aligned container">
+    Built with <i class="heart icon"></i> and <i class="coffee icon"></i> by Salami Usman Olawale.
+  </div>
 </div>
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/js/semantic.min.js"></script>
