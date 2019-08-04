@@ -1,18 +1,12 @@
 {{#if error_msg}}
   <div class="ui visible negative message">
     <i class="close icon"></i>
-    <div class="header">
-      {{!-- We're sorry we can't record your entry --}}
-    </div>
     <p>{{error_msg}}</p>
   </div>
 {{/if}}
 {{#if success_msg}}
   <div class="ui visible success message">
       <i class="close icon"></i>
-      <div class="header">
-        {{!-- Your entry was successful. --}}
-      </div>
       <p>{{success_msg}}</p>
   </div>
 {{/if}}
