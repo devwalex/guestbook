@@ -8,9 +8,12 @@ const methodOverride = require('method-override');
 
 const app = express();
 
+// Database Configuration
+const db = require('./config/database');
+
 // Connect to Mongoose
 mongoose
-	.connect('mongodb://localhost:27017/guestbook', {
+	.connect(db.mongoURI, {
 		useNewUrlParser: true
 	})
 	.then(() => {
