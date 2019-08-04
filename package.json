@@ -4,7 +4,7 @@
   "description": "Guestbook is an app that takes in user/guest entry (Fullname, Email & Comment) and save them in the database",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
