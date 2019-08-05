@@ -154,8 +154,8 @@ app.put('/edit/:id', (req, res) => {
 			guest.email = req.body.email;
 			guest.comment = req.body.comment;
 
-			guest.save().then((idea) => {
-				console.log('Updated Successfully', idea);
+			guest.save().then((guest) => {
+				console.log('Updated Successfully', guest);
 				req.flash('success_msg', 'Guest Updated Successfully');
 				res.redirect('/all-guest');
 			});
